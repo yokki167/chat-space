@@ -1,0 +1,39 @@
+.chat-main
+  .chat-main__header
+    .chat-main__header--left
+      .chat-main__header--left--group
+        techcamp
+      .chat-main__header--left--member
+        Member:masa
+    .chat-main__header--right
+      .chat-main__header--right--edit
+        = link_to "#" do
+          Edit
+  .chat-main__messages
+    .chat-main__messages--message
+      .chat-main__messages--message--box
+        .chat-main__messages--message--box--name
+          masa
+        .chat-main__messages--message--box--day
+          2020 2/4(WED) 22:33:44
+      .chat-main__messages--message--text
+        おはよう!!
+
+      .chat-main__messages--message--box
+        .chat-main__messages--message--box--name
+          masa
+        .chat-main__messages--message--box--day
+          2020 2/4(WED) 22:33:44
+      .chat-main__messages--message--text
+        こんにちは！！！！！！！！！
+
+
+  .chat-main__form
+    %form.new_message
+      .input-box
+        %input{type: "text", class: "input-box__text", placeholder: "type a message"}
+        %label{class: "input-box__image"}
+          .i.far.fa-image
+            %input{type: "file", class: "input-box__image__file"}
+      %input{type: "submit", class: "submit-btn", value: "Send"}
+      
