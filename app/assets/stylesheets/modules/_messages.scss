@@ -62,7 +62,6 @@ $section-color2: #38aef0;
       width: 300px;
       padding-top: 20px;
       padding-right: 20px;
-      padding-bottom: 40px;
       padding-left: 20px;
       font-weight: bold;
       .box {
@@ -74,6 +73,8 @@ $section-color2: #38aef0;
         }
         &--message {
           font-size: 11px;
+          padding-bottom: 40px;
+
         }
       }
     }
