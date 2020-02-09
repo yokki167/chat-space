@@ -2,38 +2,27 @@
   .chat-main__header
     .chat-main__header--left
       .chat-main__header--left--group
-        techcamp
+        = @group.name
       .chat-main__header--left--member
-        Member:masa
+        - @group.group_users.each do |group_user|
+          = group_user.user.name
     .chat-main__header--right
       .chat-main__header--right--edit
-        = link_to "#" do
+        = link_to edit_group_path(@group.id) do
           Edit
   .chat-main__messages
-    .chat-main__messages--message
-      .chat-main__messages--message--box
-        .chat-main__messages--message--box--name
-          masa
-        .chat-main__messages--message--box--day
-          2020 2/4(WED) 22:33:44
-      .chat-main__messages--message--text
-        おはよう!!
-
-      .chat-main__messages--message--box
-        .chat-main__messages--message--box--name
-          masa
-        .chat-main__messages--message--box--day
-          2020 2/4(WED) 22:33:44
-      .chat-main__messages--message--text
-        こんにちは！！！！！！！！！
-
+    = render partial: 'message', collection: @messages
 
   .chat-main__form
-    %form.new_message
+    -# %form.new_message
+    = form_for [@group, @message] do |f|
+      = f.text_field :text, class: 'input-text', placeholder: 'type a message'
       .input-box
-        %input{type: "text", class: "input-box__text", placeholder: "type a message"}
-        %label{class: "input-box__image"}
+        -# %input{type: "text", class: "input-box__text", placeholder: "type a message"}
+        -# = f.text_field :text, class: 'input-box__text', placeholder: 'type a message'
+        -# %label{class: "input-box__image"}
+        -# = f.text_field :text, class: 'input-box__image', placeholder: 'type a message'    
+        = f.label :image, class: 'input-box__image' do    
           .i.far.fa-image
-            %input{type: "file", class: "input-box__image__file"}
-      %input{type: "submit", class: "submit-btn", value: "Send"}
-      
+          = f.file_field :image, class: 'input-box__image__file'
+      = f.submit 'Send', class: 'submit-btn'
