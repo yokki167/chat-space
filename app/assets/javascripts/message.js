@@ -1,41 +1,41 @@
 $(function(){
     function buildHTML(message){
       if ( message.image) {
-        var html = `<div class="chat-main__messages--message">
-        <div class="chat-main__messages--message--box">
-        <div class="chat-main__messages--message--box--name">
-        ${message.user_name}
-        </div>
-        <div class="chat-main__messages--message--box--day">
-        ${message.created_at}
-        </div>
+        var html = `
+        <div class="chat-main__messages--message">
+          <div class="chat-main__messages--message--box">
+            <div class="chat-main__messages--message--box--name">
+              ${message.user_name}
+            </div>
+          <div class="chat-main__messages--message--box--day">
+            ${message.created_at}
+          </div>
         </div>
         <div class="chat-main__messages--message--text">
-        <p class="chat-main__messages--message--text--a">
-        ${message.text}
-        </p>
-        <img class="lower-message__image" src=${message.image} >
-        </div>
+          <p class="chat-main__messages--message--text--a">
+            ${message.text}
+          </p>
+          <img class="lower-message__image" src=${message.image} >
+          </div>
         </div>`
         return html;
         
       } else {
-        var html =
-        `<div class="chat-main__messages--message">
-        <div class="chat-main__messages--message--box">
-        <div class="chat-main__messages--message--box--name">
-        ${message.user_name}
-        </div>
-        <div class="chat-main__messages--message--box--day">
-        ${message.created_at}
-        </div>
-        </div>
-        <div class="chat-main__messages--message--text">
-        <p class="chat-main__messages--message--text--a">
-        ${message.text}
-        </p>
-        
-        </div>
+        var html =`
+        <div class="chat-main__messages--message">
+          <div class="chat-main__messages--message--box">
+            <div class="chat-main__messages--message--box--name">
+              ${message.user_name}
+            </div>
+            <div class="chat-main__messages--message--box--day">
+              ${message.created_at}
+            </div>
+          </div>
+          <div class="chat-main__messages--message--text">
+            <p class="chat-main__messages--message--text--a">
+              ${message.text}
+            </p>
+         </div>
         </div>`
         return html;
       };
@@ -62,6 +62,6 @@ $(function(){
     })
     .fail(function() {
       alert("メッセージ送信に失敗しました");
-  });
+    });
   })
 });
