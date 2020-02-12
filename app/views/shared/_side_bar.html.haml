@@ -16,23 +16,12 @@
     .chat-side__groups--group
       - current_user.groups.each do |group|
         .chat-side__groups--group--left
-          -# = link_to '#', class:"box" do
           = link_to group_messages_path(group), class:"box" do
 
             .box--name
               = group.name
             .box--message
               = group.show_last_message
-    -# .chat-side__groups
-    -#   .chat-side__groups--group
-    -#     .chat-side__groups--group--left
-    -#       .chat-side__groups--group--name
-    -#         group
-    -#       .chat-side__groups--group--message
-    -#         まだメッセージはありません
-
-
-
 
 
   
