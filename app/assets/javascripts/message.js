@@ -82,7 +82,10 @@ $(function(){
       alert("メッセージ送信に失敗しました");
     });
   })
+
+
   var reloadMessages = function() {
+    if (document.location.href.match(/\/groups\/\d+\/messages/)) {
     last_message_id = $('.message:last').data("message-id");
     $.ajax({
       url: "api/messages",
@@ -101,9 +104,9 @@ $(function(){
     })
 
     .fail(function() {
-      alert(エラーです);
+      alert('エラーです');
     });
+    }
   };
-  if (document.location.href.match(/\/groups\/\d+\/messages/)) {
-  setInterval(reloadMessages, 7000);}
-});
+  setInterval(reloadMessages, 7000)
+})
