@@ -126,6 +126,11 @@ $section-color2: #38aef0;
         line-height: 40px;
         font-size: 16px;
         border: solid 1px $section-color2;
+        color: $section-color2;
+        a {
+          color: $section-color2;
+          text-decoration: none;
+        }
       }
     }
   }
