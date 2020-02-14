@@ -76,6 +76,7 @@ $(function(){
       $('.chat-main__messages').append(html);
       $('.chat-main__messages').animate({ scrollTop: $('.chat-main__messages')[0].scrollHeight});
       $('form')[0].reset();
+      $('.submit-btn').prop('disabled', false);
     })
     .fail(function() {
       alert("メッセージ送信に失敗しました");
